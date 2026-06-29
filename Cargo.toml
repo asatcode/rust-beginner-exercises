@@ -1,6 +1,16 @@
 [package]
-name = "exerxice_un"
+name = "rust-beginner-exercises"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
-[dependencies]
+[[bin]]
+name = "exercice_1"
+path = "src/exercice_1.rs"
+
+[[bin]]
+name = "exercice_2"
+path = "src/exercice_2.rs"
+
+[[bin]]
+name = "exercice_3"
+path = "src/exercice_3.rs"

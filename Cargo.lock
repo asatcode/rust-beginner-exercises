@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "exerxice_un"
+name = "rust-beginner-exercises"
 version = "0.1.0"
