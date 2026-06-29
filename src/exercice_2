@@ -1,0 +1,51 @@
+fn main() {
+    let sentence: &str = "The Rust language is fascinating and powerful";
+    println!("Analyzed sentence : {} ", sentence);
+    println!("Lengh : {}", sentence.len());
+    let nbr_v = counter_vowels(&sentence);
+    let nbr_c = counter_con(&sentence);
+    let nbr_e = count_espace(&sentence);
+    let other = count_other(&sentence);
+    println!("Vowels's number : {}", nbr_v);
+    println!("Consonnants's number {} ", nbr_c);
+    println!("Espace's number : {}", nbr_e);
+    println!("Other's number : {}", other);
+}
+fn counter_vowels(sentences: &str) -> i32 {
+    let mut counter: i32 = 0;
+    for item in sentences.chars() {
+        let tiny = item.to_lowercase().next().unwrap();
+        if tiny == 'a' || tiny == 'e' || tiny == 'i' || tiny == 'y' || tiny == 'o' || tiny == 'u' {
+            counter += 1;
+        }
+    }
+    counter
+}
+fn counter_con(sentences: &str) -> i32 {
+    let mut counter: i32 = 0;
+    for item in sentences.chars() {
+        let tiny = item.to_lowercase().next().unwrap();
+        if tiny != 'a' && tiny != 'e' && tiny != 'i' && tiny != 'y' && tiny != 'o' && tiny != 'u' {
+            counter += 1;
+        }
+    }
+    counter
+}
+fn count_espace(sentences: &str) -> i32 {
+    let mut counter: i32 = 0;
+    for item in sentences.chars() {
+        if item == ' ' {
+            counter += 1;
+        }
+    }
+    counter
+}
+fn count_other(sentences: &str) -> i32 {
+    let mut counter = 0;
+    for item in sentences.chars() {
+        if !item.is_alphabetic() && item != ' ' {
+            counter += 1;
+        }
+    }
+    counter
+}
